@@ -96,6 +96,9 @@ const Home = () => {
                 <span className="font-bold">Orientation:</span> {collisionData.orientation}
               </p>
               <p className="mt-2 text-gray-700">
+                <span className="font-bold">Acceleration:</span> {collisionData.acceleration}
+              </p>
+              <p className="mt-2 text-gray-700">
                 <span className="font-bold">Location:</span> Lat: {collisionData.location.lat}, Long: {collisionData.location.long}
               </p>
             </div>

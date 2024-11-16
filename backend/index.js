@@ -28,6 +28,7 @@ const collisionSchema = new mongoose.Schema({
   impact: String,
   temperature: Number,
   orientation: String,
+  acceleration: Number,
   location: { lat: String, long: String },
   createdAt: { type: Date, default: Date.now },
 });
@@ -38,9 +39,9 @@ app.use('/', routes);
 
 app.post("/api/collisions", async (req, res) => {
   try {
-    const { impact, temperature, orientation, location } = req.body;
+    const { impact, acceleration, temperature, orientation, location } = req.body;
 
-    const collisionData = new Collision({ impact, temperature, orientation, location });
+    const collisionData = new Collision({ impact, acceleration, temperature, orientation, location });
 
     await collisionData.save(); 
 
